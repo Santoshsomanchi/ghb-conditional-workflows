@@ -35,10 +35,10 @@ jobs:
       - name: Test code
         id: run-tests
         run: npm run test
-        continue-on-error: true  # ← This is the secret ingredient
+        #continue-on-error: true  # ← This is the secret ingredient
       - name: Upload test report
         if: failure() && steps.run-tests.outcome == 'failure'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-report
           path: test.json
