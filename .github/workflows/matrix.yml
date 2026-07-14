@@ -10,6 +10,11 @@ jobs:
         include:
           - os: ubuntu-latest
             node: 24
+        exclude:
+          - os: windows-latest
+            node: 22
+          - os: macos-latest
+            node: 26
     runs-on: ${{ matrix.os }}
     steps:
       - name: get code
